@@ -1,0 +1,364 @@
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #0a0a0a;
+    color: #e0e0e0;
+    font-family: 'EB Garamond', serif;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+  
+  h1, h2, h3, h4 {
+    font-family: 'Cinzel', serif;
+    color: #c9ab6e;
+  }
+  
+  /* Game Container */
+  .app-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Title Screen */
+  .title-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9));
+    background-size: cover;
+    text-align: center;
+    padding: 0 20px;
+  }
+  
+  .title-screen h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    letter-spacing: 0.1em;
+  }
+  
+  .subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    font-style: italic;
+    color: #9ab8c2;
+  }
+  
+  /* Story Screen */
+  .story-screen {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    min-height: 100vh;
+  }
+  
+  .location-display {
+    background-color: rgba(30, 30, 30, 0.8);
+    padding: 8px 15px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    color: #9ab8c2;
+    font-family: 'Cinzel', serif;
+  }
+  
+  .story-text {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    line-height: 1.7;
+  }
+  
+  .scene-description {
+    font-style: italic;
+    color: #b8b8b8;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: rgba(20, 20, 20, 0.5);
+    border-radius: 5px;
+  }
+  
+  /* Character Dialog */
+  .character-container {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+  }
+  
+  .character-portrait {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 15px;
+    background-color: #222;
+    object-fit: cover;
+    border: 2px solid #444;
+  }
+  
+  .character-name {
+    color: #9ab8c2;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    font-family: 'Cinzel', serif;
+  }
+  
+  .dialogue-container {
+    background-color: rgba(28, 28, 28, 0.7);
+    padding: 15px;
+    border-radius: 5px;
+    border-left: 3px solid #9ab8c2;
+    margin-bottom: 10px;
+  }
+  
+  /* Choices */
+  .choice-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .choice-btn {
+    padding: 12px 20px;
+    background-color: #1c3144;
+    color: #e0e0e0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    text-align: left;
+    transition: background-color 0.3s;
+    font-family: 'EB Garamond', serif;
+  }
+  
+  .choice-btn:hover {
+    background-color: #2a4764;
+  }
+  
+  /* Button Styles */
+  .btn {
+    padding: 12px 30px;
+    background-color: #5c3b24;
+    color: #e0e0e0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    margin: 10px 0;
+    transition: background-color 0.3s;
+    font-family: 'Cinzel', serif;
+  }
+  
+  .btn:hover {
+    background-color: #7b4f30;
+  }
+  
+  /* Game Navigation */
+  .game-nav {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 100;
+  }
+  
+  /* Stats Display */
+  .stats-display {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: rgba(20, 20, 20, 0.7);
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .stat-name {
+    font-size: 0.9rem;
+    color: #9ab8c2;
+  }
+  
+  .stat-value {
+    font-weight: bold;
+    color: #c9ab6e;
+    font-size: 1.2rem;
+  }
+  
+  /* Inventory */
+  .inventory-page {
+    min-height: 100vh;
+    padding: 20px;
+    background-color: #0a0a0a;
+  }
+  
+  .inventory-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .inventory-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .inventory-item {
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+    border-radius: 5px;
+    padding: 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .inventory-item:hover {
+    background-color: #2a2a2a;
+    transform: translateY(-3px);
+  }
+  
+  .inventory-item-name {
+    color: #c9ab6e;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  
+  .inventory-item-desc {
+    font-size: 0.9rem;
+    color: #b8b8b8;
+  }
+  
+  /* Map Page */
+  .map-page {
+    min-height: 100vh;
+    padding: 20px;
+    background-color: #0a0a0a;
+  }
+  
+  .map-container {
+    width: 100%;
+    height: 70vh;
+    background-color: #1c1c1c;
+    border-radius: 5px;
+    margin-top: 20px;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #333;
+  }
+  
+  .map-location {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #c9ab6e;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .map-location:hover {
+    background-color: #e0c383;
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+  
+  .map-location.visited {
+    background-color: #9ab8c2;
+  }
+  
+  .map-location.current {
+    background-color: #c55;
+    box-shadow: 0 0 10px #f00;
+  }
+  
+  /* Settings Panel */
+  .settings-panel {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #1e1e1e;
+    border: 1px solid #444;
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 200;
+    width: 320px;
+    max-width: 90vw;
+  }
+  
+  .settings-option {
+    margin: 15px 0;
+  }
+  
+  .settings-option label {
+    display: block;
+    margin-bottom: 8px;
+    color: #9ab8c2;
+  }
+  
+  .settings-option select, .settings-option input {
+    width: 100%;
+    padding: 8px;
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+    color: #e0e0e0;
+    border-radius: 3px;
+    font-family: 'EB Garamond', serif;
+  }
+  
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 150;
+  }
+  
+  /* Animations */
+  .fade-in {
+    animation: fadeIn 1s;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  .page-transition {
+    animation: pageTransition 0.5s;
+  }
+  
+  @keyframes pageTransition {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
